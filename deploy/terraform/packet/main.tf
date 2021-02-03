@@ -52,17 +52,17 @@ resource "null_resource" "tink_directory" {
   }
 
   provisioner "file" {
-    source      = "../../setup.sh"
+    source      = "../../../setup.sh"
     destination = "/root/tink/setup.sh"
   }
 
   provisioner "file" {
-    source      = "../../generate-envrc.sh"
+    source      = "..././../generate-envrc.sh"
     destination = "/root/tink/generate-envrc.sh"
   }
 
   provisioner "file" {
-    source      = "../../deploy"
+    source      = "../.../../deploy"
     destination = "/root/tink"
   }
 
