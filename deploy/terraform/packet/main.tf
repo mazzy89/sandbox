@@ -35,7 +35,7 @@ resource "packet_device" "tink_provisioner" {
   operating_system = "ubuntu_18_04"
   billing_cycle    = "hourly"
   project_id       = var.project_id
-  user_data        = file("install_package.sh")
+  user_data        = file("../../scripts/install_package.sh")
 }
 
 resource "null_resource" "tink_directory" {
@@ -57,12 +57,12 @@ resource "null_resource" "tink_directory" {
   }
 
   provisioner "file" {
-    source      = "..././../generate-envrc.sh"
+    source      = "../../../generate-envrc.sh"
     destination = "/root/tink/generate-envrc.sh"
   }
 
   provisioner "file" {
-    source      = "../.../../deploy"
+    source      = "../../../deploy"
     destination = "/root/tink"
   }
 
